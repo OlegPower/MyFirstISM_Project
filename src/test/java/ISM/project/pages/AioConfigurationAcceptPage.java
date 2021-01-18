@@ -9,9 +9,6 @@ public class AioConfigurationAcceptPage extends BasePage {
     @FindBy(css = ".th-path-0-1")
     private WebElement sortTableBySignalTypeUp;
 
-   /* @FindBy(css = ".th-path-0-1")
-    private WebElement sortTableBySignalTypeDown;*/
-
     @FindBy(css = ".th-path-1-108-3")
     private WebElement configurationButton;
 
