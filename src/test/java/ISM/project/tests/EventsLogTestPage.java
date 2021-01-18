@@ -13,10 +13,7 @@ public class EventsLogTestPage extends BaseTest {
         new EventsOpenHelper().openEventsPage();
         EventsLogAcceptHelper eventsLogAcceptHelper = new EventsLogAcceptHelper();
         eventsLogAcceptHelper.openLogPage();
-        eventsLogAcceptHelper.openFilterModal();
-        eventsLogAcceptHelper.setDateFrom(LocalDate.of(2020, 3, 2));
-        eventsLogAcceptHelper.setDateTo(LocalDate.of(2020, 3, 2));
-        eventsLogAcceptHelper.searchFilterParameters();
+        eventsLogAcceptHelper.filterEventsInLog(LocalDate.of(2020, 3,2), LocalDate.of(2020, 3, 2));
 
         Thread.sleep(2_000);
 

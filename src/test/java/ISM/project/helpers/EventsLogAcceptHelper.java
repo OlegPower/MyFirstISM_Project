@@ -23,11 +23,8 @@ public class EventsLogAcceptHelper extends EventsLogAcceptPage {
         return errorLedElements.size();
     }
 
-    public void openFilterModal() {
+    public void filterEventsInLog(LocalDate fromDate, LocalDate toDate) {
         filterButton.click();
-    }
-
-    public void setDateFrom(LocalDate fromDate) {
         yearValueFrom.clear();
         yearValueFrom.clear();
         yearValueFrom.sendKeys(String.valueOf(fromDate.getYear()));
@@ -35,9 +32,6 @@ public class EventsLogAcceptHelper extends EventsLogAcceptPage {
         monthValueFrom.sendKeys(String.valueOf(fromDate.getMonthValue()));
         dayValueFrom.clear();
         dayValueFrom.sendKeys(String.valueOf(fromDate.getDayOfMonth()));
-    }
-
-    public void setDateTo(LocalDate toDate) {
         yearValueTo.clear();
         yearValueTo.clear();
         yearValueTo.sendKeys(String.valueOf(toDate.getYear()));
@@ -45,11 +39,9 @@ public class EventsLogAcceptHelper extends EventsLogAcceptPage {
         monthValueTo.sendKeys(String.valueOf(toDate.getMonthValue()));
         dayValueTo.clear();
         dayValueTo.sendKeys(String.valueOf(toDate.getDayOfMonth()));
-    }
-
-    public void searchFilterParameters() {
         warningEventsCheckbox.click();
         comingEventsCheckbox.click();
         searchButton.click();
     }
+
 }
