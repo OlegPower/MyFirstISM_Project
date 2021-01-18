@@ -5,17 +5,17 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class DIOConfigurationPage {
+public class DioConfigurationOpenPage extends BasePage {
 
-    @FindBy(xpath = "//*[@style='clip-path: url(\"#id_2_id_ClpPath0\");']//*[text()='DIO configuration']")
+    @FindBy(xpath = "//*[text()='DIO configuration']")
     private WebElement configurationButton;
 
-    public DIOConfigurationPage(WebDriver driver ) {
+    public DioConfigurationOpenPage() {
         driver.switchTo().defaultContent().switchTo().frame("content_myframe");
         PageFactory.initElements(driver, this);
-        }
+    }
 
-    public void openDIOConfigurationPage() {
+    public void openDioConfigurationPage() {
         configurationButton.click();
     }
 }
