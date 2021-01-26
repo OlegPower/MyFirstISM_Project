@@ -21,7 +21,7 @@ public class BasePage {
         capabilities.setCapability("INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS", true);
         capabilities.setCapability("IntroduceInstabilityByIgnoringProtectedModeSettings", true);
         driver = new ChromeDriver(capabilities);
-        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://192.168.165.1/?defaultdisplay=Default_org");
         driver.manage().window().maximize();
     }

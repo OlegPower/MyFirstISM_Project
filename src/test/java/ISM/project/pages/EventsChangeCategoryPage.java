@@ -4,11 +4,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class EventsAcceptPage extends BasePage {
-    @FindBy(css = ".th-path-0-2")
-    protected WebElement sortTableByCategory;
-
-    @FindBy(css = ".th-path-1-49-1")
+public class EventsChangeCategoryPage extends BasePage{
+    @FindBy(css = ".th-path-1-1-1")
     protected WebElement configurationButtonForErrorCategory;
 
     @FindBy(css = ".dpdwn-bgrnd")
@@ -20,13 +17,13 @@ public class EventsAcceptPage extends BasePage {
     @FindBy(css = "#buttonRight")
     protected WebElement acceptConfiguration;
 
-    @FindBy(css = ".th-path-1-16-1")
+    @FindBy(css = ".th-path-1-43-1")
     protected WebElement configurationButtonForWarningCategory;
 
     @FindBy(css = ".th-path-3-0")
     protected WebElement selectErrorValue;
 
-    public EventsAcceptPage() {
+    public EventsChangeCategoryPage() {
         driver.switchTo().defaultContent().switchTo().frame("idAngularIframe");
         PageFactory.initElements(driver, this);
     }

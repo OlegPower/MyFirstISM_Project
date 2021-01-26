@@ -1,12 +1,12 @@
 package ISM.project.helpers;
 
-import ISM.project.pages.EventsLogAcceptPage;
+import ISM.project.pages.EventsLogFilterAndAcceptPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import java.time.LocalDate;
 import java.util.List;
 
-public class EventsLogAcceptHelper extends EventsLogAcceptPage {
+public class EventsLogFilterAndAcceptHelper extends EventsLogFilterAndAcceptPage {
     public void openLogPage() {
         openLogButton.click();
     }
@@ -38,10 +38,10 @@ public class EventsLogAcceptHelper extends EventsLogAcceptPage {
         monthValueTo.clear();
         monthValueTo.sendKeys(String.valueOf(toDate.getMonthValue()));
         dayValueTo.clear();
+        dayValueTo.clear();
         dayValueTo.sendKeys(String.valueOf(toDate.getDayOfMonth()));
         warningEventsCheckbox.click();
         comingEventsCheckbox.click();
         searchButton.click();
     }
-
 }

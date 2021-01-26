@@ -7,14 +7,11 @@ import org.openqa.selenium.support.PageFactory;
 public class EventsOpenPage extends BasePage {
 
     @FindBy(css = "#id_Navi_5_Buttons_NavPrim2_radiobutton_clickarea")
-    private WebElement eventsButton;
+    protected WebElement eventsButton;
 
     public EventsOpenPage() {
         driver.switchTo().defaultContent().switchTo().frame("id_frameMenu_myframe");
         PageFactory.initElements(driver, this);
-    }
-    public void openEventsPage() {
-        eventsButton.click();
     }
 }
 

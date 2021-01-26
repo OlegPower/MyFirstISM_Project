@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class EventsLogAcceptPage extends BasePage {
+public class EventsLogFilterAndAcceptPage extends BasePage {
     @FindBy(css = "#buttonRight")
     protected WebElement openLogButton;
 
@@ -38,7 +38,13 @@ public class EventsLogAcceptPage extends BasePage {
     @FindBy(css = ".th-path-17")
     protected WebElement searchButton;
 
-    public EventsLogAcceptPage() {
+    @FindBy(css = ".th-path-7")
+    protected WebElement exportButton;
+
+    @FindBy(css = "#button_abort_idBackArrow")
+    protected WebElement cancelButtonInExportPage;
+
+    public EventsLogFilterAndAcceptPage() {
         driver.switchTo().defaultContent().switchTo().frame("idAngularIframe");
         PageFactory.initElements(driver, this);
     }
