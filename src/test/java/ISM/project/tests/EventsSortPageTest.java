@@ -7,7 +7,7 @@ import static org.testng.Assert.assertTrue;
 
 public class EventsSortPageTest extends BaseTest{
     @Test
-    public void test() throws InterruptedException {
+    public void test(){
         new EventsOpenHelper().openEventsPage();
         EventsSortHelper eventsSortHelper = new EventsSortHelper();
 
@@ -18,5 +18,7 @@ public class EventsSortPageTest extends BaseTest{
 
         String ledColorAfterSortingTable = eventsSortHelper.getLedColorAfterSorting();
         assertTrue(ledColorAfterSortingTable.contains("grey"), "Expected classes to contain class `grey` but was: " + ledColorAfterSortingTable);
+
+        new SettingsPanelHelper().openSettingsPanel();
     }
 }

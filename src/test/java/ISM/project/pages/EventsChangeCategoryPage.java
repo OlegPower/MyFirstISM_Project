@@ -5,8 +5,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class EventsChangeCategoryPage extends BasePage{
-    @FindBy(css = ".th-path-1-1-1")
-    protected WebElement configurationButtonForErrorCategory;
 
     @FindBy(css = ".dpdwn-bgrnd")
     protected WebElement expandDropdown;
@@ -16,9 +14,6 @@ public class EventsChangeCategoryPage extends BasePage{
 
     @FindBy(css = "#buttonRight")
     protected WebElement acceptConfiguration;
-
-    @FindBy(css = ".th-path-1-43-1")
-    protected WebElement configurationButtonForWarningCategory;
 
     @FindBy(css = ".th-path-3-0")
     protected WebElement selectErrorValue;
