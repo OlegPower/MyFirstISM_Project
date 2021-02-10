@@ -3,10 +3,16 @@ package ISM.project.helpers;
 import ISM.project.pages.SystemNamePlateChangeValuePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public class SystemNamePlateChangeValueHelper extends SystemNamePlateChangeValuePage {
 
     public void openNamePlatePage(){
+        WebElement button = driver.findElement(By.cssSelector("#Nameplate"));
+        new Actions(driver)
+                .moveToElement(button)
+                .build()
+                .perform();
         namePlateButton.click();
         txTypeRow.click();
         valueOfTxType.click();
