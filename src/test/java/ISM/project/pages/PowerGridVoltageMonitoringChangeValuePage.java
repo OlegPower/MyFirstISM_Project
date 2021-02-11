@@ -4,12 +4,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class PowerGridTransformerDataChangeValuePage extends BasePage{
+public class PowerGridVoltageMonitoringChangeValuePage extends BasePage{
 
-	@FindBy(css="#Wandlerdaten")
-	protected WebElement transformerDataButton;
+	@FindBy(css="#buttonRight")
+	protected WebElement acceptButton;
 
-	public PowerGridTransformerDataChangeValuePage(){
+
+	public PowerGridVoltageMonitoringChangeValuePage(){
 	    driver.switchTo().defaultContent().switchTo().frame("idAngularIframe");
         PageFactory.initElements(driver, this);
     }
