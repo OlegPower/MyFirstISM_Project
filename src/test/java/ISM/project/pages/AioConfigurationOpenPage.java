@@ -8,6 +8,7 @@ public class AioConfigurationOpenPage extends BasePage {
     protected WebElement AIOConfigurationPageButton;
 
     public AioConfigurationOpenPage() {
+        super();
         driver.switchTo().defaultContent().switchTo().frame("content_myframe");
         PageFactory.initElements(driver, this);
     }

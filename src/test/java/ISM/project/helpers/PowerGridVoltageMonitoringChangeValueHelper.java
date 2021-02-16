@@ -9,20 +9,15 @@ public class PowerGridVoltageMonitoringChangeValueHelper extends PowerGridVoltag
     public static final String ONE_HUNDRED = "100";
     public static final String SIXTY = "60";
 
-    public void changeValue() {
+    public String changeValue() {
         WebElement getCurrentValue = driver.findElement(By.cssSelector(".rz-pointer-min"));
         String cssClasses = getCurrentValue.getAttribute("aria-valuenow");
         WebElement changeCurrentValue = driver.findElement(By.cssSelector("ng-transclude > div > tooltip > div > input"));
-        if (cssClasses.equals(ONE_HUNDRED)) {
-            changeCurrentValue.click();
-            changeCurrentValue.clear();
-            changeCurrentValue.sendKeys("60");
-        }
-        if (cssClasses.equals(SIXTY)) {
-            changeCurrentValue.click();
-            changeCurrentValue.clear();
-            changeCurrentValue.sendKeys("100");
-        }
+        String newValue = cssClasses.equals(ONE_HUNDRED) ? "60" : "100";
+        changeCurrentValue.click();
+        changeCurrentValue.clear();
+        changeCurrentValue.sendKeys(newValue);
         acceptButton.click();
+        return newValue;
     }
 }

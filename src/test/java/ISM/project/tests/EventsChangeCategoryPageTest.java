@@ -14,7 +14,7 @@ public class EventsChangeCategoryPageTest extends BaseTest {
         new EventsOpenHelper().openEventsPage();
         EventsChangeCategoryHelper eventsChangeCategoryHelper = new EventsChangeCategoryHelper();
 
-        String eventId = "1110";
+        String eventId = "1001";
         String currentCategory = eventsChangeCategoryHelper.getCategoryOfEvent(eventId);
         eventsChangeCategoryHelper.changeCategoryToAnyOpposite(eventId, currentCategory);
 

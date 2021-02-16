@@ -28,5 +28,7 @@ public class BasePage {
    /* public static void closeDriver() {
         driver.close();
     }*/
+    public BasePage(){
 
+    }
 }
