@@ -2,9 +2,8 @@ package ISM.project.pages;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class AioConfigurationAcceptPage extends BasePage {
+public class AioConfigurationAcceptPage extends IdAngularIFrame {
     @FindBy(css = ".th-path-0-1")
     protected WebElement sortTableBySignalTypeUp;
 
@@ -22,9 +21,4 @@ public class AioConfigurationAcceptPage extends BasePage {
 
     @FindBy(css = "bottom-buttons.white .th-path-1")
     protected WebElement acceptAioConfigurationPageButton;
-
-    public AioConfigurationAcceptPage() {
-        driver.switchTo().defaultContent().switchTo().frame("idAngularIframe");
-        PageFactory.initElements(driver, this);
-    }
 }

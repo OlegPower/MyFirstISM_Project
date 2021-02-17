@@ -2,9 +2,8 @@ package ISM.project.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class SystemNamePlateChangeValuePage extends BasePage{
+public class SystemNamePlateChangeValuePage extends IdAngularIFrame{
 	@FindBy(css="#Nameplate")
 	protected WebElement namePlateButton;
 
@@ -16,9 +15,4 @@ public class SystemNamePlateChangeValuePage extends BasePage{
 
 	@FindBy(css="#buttonRight")
 	protected WebElement acceptButton;
-
-    public SystemNamePlateChangeValuePage() {
-        driver.switchTo().defaultContent().switchTo().frame("idAngularIframe");
-        PageFactory.initElements(driver, this);
-    }
 }

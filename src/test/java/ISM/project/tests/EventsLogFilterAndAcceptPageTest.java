@@ -4,7 +4,6 @@ import ISM.project.helpers.EventsLogFilterAndAcceptHelper;
 import ISM.project.helpers.EventsOpenHelper;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import java.time.LocalDate;
 
 public class EventsLogFilterAndAcceptPageTest extends BaseTest {

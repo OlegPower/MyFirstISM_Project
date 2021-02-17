@@ -40,6 +40,7 @@ public class EventsLogFilterAndAcceptHelper extends EventsLogFilterAndAcceptPage
         dayValueTo.clear();
         dayValueTo.clear();
         dayValueTo.sendKeys(String.valueOf(toDate.getDayOfMonth()));
+        infoEventsCheckbox.click();
         warningEventsCheckbox.click();
         comingEventsCheckbox.click();
         searchButton.click();

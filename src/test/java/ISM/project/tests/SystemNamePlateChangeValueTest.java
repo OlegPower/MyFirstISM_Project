@@ -10,7 +10,7 @@ public class SystemNamePlateChangeValueTest extends BaseTest{
         new SettingsPanelHelper().openSettingsPanel();
         new ParametersOpenHelper().OpenParametersPage();
         SystemNamePlateChangeValueHelper systemNamePlateCheckHelper = new SystemNamePlateChangeValueHelper();
-        systemNamePlateCheckHelper.openNamePlatePage();
+        systemNamePlateCheckHelper.namePlateChangeValue();
 
         String currentValue = systemNamePlateCheckHelper.getCurrentTxTypeValue();
         assertTrue(currentValue.contains("15"), "TxType value = 15");

@@ -7,7 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 
 public class SystemNamePlateChangeValueHelper extends SystemNamePlateChangeValuePage {
 
-    public void openNamePlatePage(){
+    public void namePlateChangeValue(){
         WebElement button = driver.findElement(By.cssSelector("#SYSLOG"));
         new Actions(driver)
                 .moveToElement(button)

@@ -15,7 +15,7 @@ public class PowerGridVoltageMonitoringChangeValueTest extends BaseTest{
     public void test(){
         new SettingsPanelHelper().openSettingsPanel();
         new ParametersOpenHelper().OpenParametersPage();
-        new PowerGridOfParametersExpandListHelper().powerGridExpandList();
+//        new PowerGridOfParametersExpandListHelper().powerGridExpandList();
         new PowerGridVoltageMonitoringOpenHelper().openVoltageMonitoringPage();
         String updatedValue = new PowerGridVoltageMonitoringChangeValueHelper().changeValue();
         if(ONE_HUNDRED.equals(updatedValue)){

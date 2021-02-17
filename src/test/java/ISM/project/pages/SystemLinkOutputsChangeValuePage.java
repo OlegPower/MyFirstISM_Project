@@ -2,9 +2,9 @@ package ISM.project.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class SystemLinkOutputsChangeValuePage extends BasePage{
+
+public class SystemLinkOutputsChangeValuePage extends IdAngularIFrame{
 	@FindBy(css=".dropdown")
 	protected WebElement expandDropdown;
 
@@ -13,10 +13,4 @@ public class SystemLinkOutputsChangeValuePage extends BasePage{
 
 	@FindBy(css="#buttonRight")
 	protected WebElement acceptButton;
-
-
-    public SystemLinkOutputsChangeValuePage() {
-        driver.switchTo().defaultContent().switchTo().frame("idAngularIframe");
-        PageFactory.initElements(driver, this);
-    }
 }
