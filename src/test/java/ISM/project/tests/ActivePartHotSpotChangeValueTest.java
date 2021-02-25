@@ -1,27 +1,27 @@
 package ISM.project.tests;
 
 import ISM.project.helpers.*;
-import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import static org.testng.Assert.assertEquals;
 
 public class ActivePartHotSpotChangeValueTest extends BaseTest {
 
     @Test
-    public void test() throws InterruptedException {
+    public void test(){
         new SettingsPanelHelper().openSettingsPanel();
         new ParametersOpenHelper().OpenParametersPage();
         new ActivePartOfParametersExpandListHelper().activePartExpandList();
         new ActivePartHotSpotOpenPageHelper().hotSpotOpenPage();
         ActivePartHotSpotChangeValueHelper hotSpotChangeValueHelper = new ActivePartHotSpotChangeValueHelper();
+        String newTypeOfMetrics = hotSpotChangeValueHelper.hotSpotChangeValue();
 
-        Thread.sleep(5_000);
+        int expectedRowsCount = "Measurement".equalsIgnoreCase(newTypeOfMetrics) ? 10 : 16;
 
-        hotSpotChangeValueHelper.hotSpotChangeValue();
+        int actualRowsCount = hotSpotChangeValueHelper.getCurrentCountOfRows();
 
-        Integer rowsCountWithMeasurement = hotSpotChangeValueHelper.getNumberRowsWithMeasurement();
-        Assert.assertTrue(rowsCountWithMeasurement == 10, "Table must contain 10 rows. Recheck it manually");
+        assertEquals(actualRowsCount, expectedRowsCount);
 
-        Integer rowsCountWithCalculation = hotSpotChangeValueHelper.getNumberRowsWithCalculation();
-        Assert.assertTrue(rowsCountWithCalculation == 16, "Table must contain 16 rows. Recheck it manually");
+        new ParametersReturnToListHelper().parametersInBreadCrumbs();
     }
 }
