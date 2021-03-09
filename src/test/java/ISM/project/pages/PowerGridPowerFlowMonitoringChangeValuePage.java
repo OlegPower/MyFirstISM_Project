@@ -14,4 +14,13 @@ public class PowerGridPowerFlowMonitoringChangeValuePage extends IdAngularIFrame
 	@FindBy(css=".th-dynamic-dropdown")
 	protected WebElement reversalOfPowerFlowDropdown;
 
+	@FindBy(css=".th-path-0-1")
+	protected WebElement targetTapPositionValue;
+
+	@FindBy(css=".th-path-0-0")
+	protected WebElement offValue;
+
+	@FindBy(css="#buttonRight")
+	protected WebElement acceptButton;
+
 }
