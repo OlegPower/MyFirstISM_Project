@@ -10,7 +10,7 @@ public class ActivePartHotSpotChangeValueTest extends BaseTest {
     @Test
     public void test(){
         new SettingsPanelHelper().openSettingsPanel();
-        new ParametersOpenHelper().OpenParametersPage();
+        new ParametersOpenHelper().openParametersPage();
         new ActivePartOfParametersExpandListHelper().activePartExpandList();
         new ActivePartHotSpotOpenPageHelper().hotSpotOpenPage();
         ActivePartHotSpotChangeValueHelper hotSpotChangeValueHelper = new ActivePartHotSpotChangeValueHelper();

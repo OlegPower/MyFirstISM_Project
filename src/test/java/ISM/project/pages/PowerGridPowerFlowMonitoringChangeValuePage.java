@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class PowerGridPowerFlowMonitoringChangeValuePage extends IdAngularIFrame{
 
-	@FindBy(css="#NegativerWirkleistungsflussueberwachung")
+	@FindBy(css="#NegativerWirkleistungsflussueberwachung > span")
 	protected WebElement powerFlowMonitoringButton;
 
 	@FindBy(css="#NegPowerFlowReaction")

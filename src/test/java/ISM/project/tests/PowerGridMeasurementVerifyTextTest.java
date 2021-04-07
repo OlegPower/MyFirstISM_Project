@@ -10,8 +10,8 @@ public class PowerGridMeasurementVerifyTextTest extends BaseTest{
     @Test
     public void test(){
         new SettingsPanelHelper().openSettingsPanel();
-        new ParametersOpenHelper().OpenParametersPage();
-        new PowerGridOfParametersExpandListHelper().powerGridExpandList();
+        new ParametersOpenHelper().openParametersPage();
+        new PowerGridOfParametersExpandListHelper().powerGridExpandListIfNeeded();
         new PowerGridMeasurementVerifyTextHelper().openMeasurementPage();
 
         String nameOfFirstRow = new PowerGridMeasurementVerifyTextHelper().getNameOfFirstRow();

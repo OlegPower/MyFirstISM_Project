@@ -8,7 +8,7 @@ public class SystemLinkOutputsChangeValueTest extends BaseTest{
     @Test
     public void test(){
         new SettingsPanelHelper().openSettingsPanel();
-        new ParametersOpenHelper().OpenParametersPage();
+        new ParametersOpenHelper().openParametersPage();
         new SystemOfParametersExpandListHelper().expandSystemList();
         new SystemLinkOutputsOpenPageHelper().openPage();
         SystemLinkOutputsChangeValueHelper systemLinkOutputsChangeValueHelper2 = new SystemLinkOutputsChangeValueHelper();

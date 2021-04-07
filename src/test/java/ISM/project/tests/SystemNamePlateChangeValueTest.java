@@ -8,7 +8,7 @@ public class SystemNamePlateChangeValueTest extends BaseTest{
     @Test
     public void test(){
         new SettingsPanelHelper().openSettingsPanel();
-        new ParametersOpenHelper().OpenParametersPage();
+        new ParametersOpenHelper().openParametersPage();
         SystemNamePlateChangeValueHelper systemNamePlateCheckHelper = new SystemNamePlateChangeValueHelper();
         systemNamePlateCheckHelper.namePlateChangeValue();
 
@@ -19,7 +19,7 @@ public class SystemNamePlateChangeValueTest extends BaseTest{
         assertTrue(currentTabHandlerPosition1.contains("focus"), "TabHandler doesn't set on TxType row");
 
         new SettingsPanelHelper().openSettingsPanel();
-        new ParametersOpenHelper().OpenParametersPage();
+        new ParametersOpenHelper().openParametersPage();
         SystemNamePlateCheckTabHandlerHelper systemNamePlateCheckTabHandlerHelper = new SystemNamePlateCheckTabHandlerHelper();
         systemNamePlateCheckTabHandlerHelper.getTabHandlerPosition();
 

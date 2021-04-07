@@ -2,6 +2,7 @@ package ISM.project.tests;
 
 import ISM.project.helpers.EventsChangeCategoryHelper;
 import ISM.project.helpers.EventsOpenHelper;
+import ISM.project.helpers.ParameterListHelper;
 import org.testng.annotations.Test;
 
 import static ISM.project.helpers.EventsChangeCategoryHelper.ERROR_CATEGORY;
@@ -19,7 +20,6 @@ public class EventsChangeCategoryPageTest extends BaseTest {
         eventsChangeCategoryHelper.changeCategoryToAnyOpposite(eventId, currentCategory);
 
         String updatedCategory = eventsChangeCategoryHelper.getCategoryOfEvent(eventId);
-
         if (ERROR_CATEGORY.equals(currentCategory)){
             assertEquals(updatedCategory, WARNING_CATEGORY);
         }else {

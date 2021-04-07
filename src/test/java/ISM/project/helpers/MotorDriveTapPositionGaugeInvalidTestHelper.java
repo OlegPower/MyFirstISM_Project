@@ -4,16 +4,26 @@ import ISM.project.pages.MotorDriveTapPositionGaugeInvalidTestPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
+
 public class MotorDriveTapPositionGaugeInvalidTestHelper extends MotorDriveTapPositionGaugeInvalidTestPage {
-    public String checkInvalidCondition() {
-        WebElement invalidRow = driver.findElement(By.cssSelector("g:nth-child(6) > svg > text"));
-        String invalidRowText = invalidRow.getText();
-        System.out.println("invalid text : " + invalidRowText);
-        return invalidRowText;
+
+    private final By errorTextElementSelector = By.cssSelector("g:nth-child(6) > svg > text");
+
+    public String getCurrentErrorGaugeText() {
+        WebElement textElement = driver.findElement(errorTextElementSelector);
+        String currentText = textElement.getText();
+        System.out.println("current gauge text : " + currentText);
+        return currentText;
     }
 
-    public String checkTapPositionColor(){
-        WebElement tapPositionColor = driver.findElement(By.cssSelector("#text-tap-pos-1 > text"));
+    public boolean isErrorMessagePresent() {
+        List<WebElement> elements = driver.findElements(errorTextElementSelector);
+        return elements.size() > 0;
+    }
+
+    public String getTapPositionColor() {
+        WebElement tapPositionColor = driver.findElement(By.cssSelector("text[fill]"));
         String redColor = tapPositionColor.getAttribute("fill");
         System.out.println("current tap position color : " + redColor);
         return redColor;

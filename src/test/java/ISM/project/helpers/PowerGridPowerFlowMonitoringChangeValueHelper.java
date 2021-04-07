@@ -14,22 +14,24 @@ public class PowerGridPowerFlowMonitoringChangeValueHelper extends PowerGridPowe
         reversalOfPowerFlowRow.click();
     }
 
-    public String reversalOfPowerFlowChangeValue() {
+    public void selectSpecificPowerFlow(String specificMode) {
         WebElement dropDown = driver.findElement(By.cssSelector(".th-dynamic-dropdown"));
         String currentDropdownValue = dropDown.getText();
+        if (currentDropdownValue.equalsIgnoreCase(specificMode)) {
+            System.out.println("specified mode `" + specificMode + "` is already selected!");
+            return;
+        }
         dropDown.click();
         WebElement dropdownMenu = dropDown.findElement(By.cssSelector(".dropdown-menu"));
         List<WebElement> options = dropdownMenu.findElements(By.tagName("li"));
-        Optional<WebElement> differentDropdownValue = options.stream()
-                .filter(el -> !el.getText().equalsIgnoreCase(currentDropdownValue))
+        Optional<WebElement> specifiedElement = options.stream()
+                .filter(el -> el.getText().equalsIgnoreCase(specificMode))
                 .findFirst();
-        if (!differentDropdownValue.isPresent()) {
-            throw new RuntimeException("Can not find element with different value!");
+        if (!specifiedElement.isPresent()) {
+            throw new RuntimeException("Can not find element with mode `" + specificMode + "`!");
         }
-        WebElement differentWebElement = differentDropdownValue.get();
-        String newValue = differentWebElement.getText().trim();
+        WebElement differentWebElement = specifiedElement.get();
         differentWebElement.click();
         acceptButton.click();
-        return newValue;
     }
 }
