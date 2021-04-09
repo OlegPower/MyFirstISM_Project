@@ -3,7 +3,6 @@ package ISM.project.tests;
 import ISM.project.helpers.ControlParametersHelper;
 import ISM.project.helpers.ControlParametersOpenHelper;
 import ISM.project.helpers.SettingsPanelHelper;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertTrue;

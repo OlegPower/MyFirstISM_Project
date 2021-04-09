@@ -10,10 +10,10 @@ import static org.testng.Assert.assertTrue;
 
 public class MotorDriveArrowDirectionTest extends BaseTest {
     @Test
-    public void test() {
+    public void test() throws InterruptedException {
         new SettingsPanelHelper().openSettingsPanel();
         new ParametersOpenHelper().openParametersPage();
-//        new ActivePartOfParametersExpandListHelper().activePartExpandList();
+        new ParameterListHelper().selectParameter("Active part", "Temperature monitoring");
         String updatedValue = new ActivePartTemperatureMonitoringChangeValueHelper().temperatureMonitoringChangeValue();
         assertTrue(ImmutableSet.of(ONE_HUNDRED_TWENTY_EIGHT, MINUS_ONE_HUNDRED_TWENTY_EIGHT).contains(updatedValue));
         new SettingsPanelHelper().openSettingsPanel();

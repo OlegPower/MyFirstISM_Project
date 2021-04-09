@@ -6,10 +6,6 @@ import org.openqa.selenium.WebElement;
 
 public class SystemLinkOutputsCheckTextHelper extends SystemLinkOutputsCheckTextPage {
 
-    public void openLinkOutputsPage(){
-        linkOutputsButton.click();
-    }
-
     public String getNameOfText(){
         WebElement nameOfText = driver.findElement(By.cssSelector("td:nth-child(1) > span"));
         return nameOfText.getText();

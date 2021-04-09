@@ -10,11 +10,10 @@ import static org.testng.Assert.assertTrue;
 
 public class PowerGridVoltageMonitoringChangeValueTest extends BaseTest{
     @Test
-    public void test(){
+    public void test() throws InterruptedException {
         new SettingsPanelHelper().openSettingsPanel();
         new ParametersOpenHelper().openParametersPage();
-//        new PowerGridOfParametersExpandListHelper().powerGridExpandListIfNeeded();
-        new PowerGridVoltageMonitoringOpenHelper().openVoltageMonitoringPage();
+        new ParameterListHelper().selectParameter("Power grid", "Voltage monitoring");
         new PowerGridVoltageMonitoringOpenHelper().openPercentageCell();
         String updatedValue = new PowerGridVoltageMonitoringChangeValueHelper().changeValue();
         if(ONE_HUNDRED.equals(updatedValue)){

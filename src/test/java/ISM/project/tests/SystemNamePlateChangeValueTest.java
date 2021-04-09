@@ -6,9 +6,11 @@ import static org.testng.Assert.assertTrue;
 
 public class SystemNamePlateChangeValueTest extends BaseTest{
     @Test
-    public void test(){
+    public void test() throws InterruptedException {
         new SettingsPanelHelper().openSettingsPanel();
         new ParametersOpenHelper().openParametersPage();
+        new ParameterListHelper().selectParameter("System", "Name plate");
+
         SystemNamePlateChangeValueHelper systemNamePlateCheckHelper = new SystemNamePlateChangeValueHelper();
         systemNamePlateCheckHelper.namePlateChangeValue();
 

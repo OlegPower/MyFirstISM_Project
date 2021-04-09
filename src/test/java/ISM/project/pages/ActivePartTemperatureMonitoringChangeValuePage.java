@@ -5,9 +5,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class ActivePartTemperatureMonitoringChangeValuePage extends IdAngularIFrame{
 
-	@FindBy(css="#TemperatureMonitoring")
-	protected WebElement temperatureMonitoringButton;
-
 	@FindBy(css="#LimValTopOilL2Absolut")
 	protected WebElement topOilCellPage;
 

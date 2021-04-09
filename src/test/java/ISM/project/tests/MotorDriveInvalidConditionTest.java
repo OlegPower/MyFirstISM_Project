@@ -8,11 +8,11 @@ import org.testng.annotations.Test;
 public class MotorDriveInvalidConditionTest extends BaseTest {
 
     @Test
-    public void test() {
+    public void test() throws InterruptedException {
         new SettingsPanelHelper().openSettingsPanel();
         new ParametersOpenHelper().openParametersPage();
-//        new PowerGridOfParametersExpandListHelper().powerGridExpandListIfNeeded();
-        new PowerGridPowerFlowMonitoringChangeValueHelper().powerFlowMonitoringOpen();
+        new ParameterListHelper().selectParameter("Power grid", "Power flow monitoring");
+        new PowerGridPowerFlowMonitoringChangeValueHelper().powerFlowRow();
         new PowerGridPowerFlowMonitoringChangeValueHelper().selectSpecificPowerFlow("off");
         new SettingsPanelHelper().openSettingsPanel();
         new MotorDriveOpenHelper().motorDriveMonitoringOpenPage();
@@ -22,7 +22,8 @@ public class MotorDriveInvalidConditionTest extends BaseTest {
 
         new SettingsPanelHelper().openSettingsPanel();
         new ParametersOpenHelper().openParametersPage();
-        new PowerGridPowerFlowMonitoringChangeValueHelper().powerFlowMonitoringOpen();
+        new ParameterListHelper().selectParameter("Power grid", "Power flow monitoring");
+        new PowerGridPowerFlowMonitoringChangeValueHelper().powerFlowRow();
         new PowerGridPowerFlowMonitoringChangeValueHelper().selectSpecificPowerFlow("Target tap position");
     }
 }

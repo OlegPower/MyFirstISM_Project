@@ -9,8 +9,7 @@ import java.util.Optional;
 
 public class PowerGridPowerFlowMonitoringChangeValueHelper extends PowerGridPowerFlowMonitoringChangeValuePage {
 
-    public void powerFlowMonitoringOpen() {
-        powerFlowMonitoringButton.click();
+    public void powerFlowRow() {
         reversalOfPowerFlowRow.click();
     }
 

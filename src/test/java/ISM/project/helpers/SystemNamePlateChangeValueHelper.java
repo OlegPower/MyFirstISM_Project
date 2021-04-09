@@ -8,12 +8,6 @@ import org.openqa.selenium.interactions.Actions;
 public class SystemNamePlateChangeValueHelper extends SystemNamePlateChangeValuePage {
 
     public void namePlateChangeValue(){
-        WebElement button = driver.findElement(By.cssSelector("#SYSLOG"));
-        new Actions(driver)
-                .moveToElement(button)
-                .build()
-                .perform();
-        namePlateButton.click();
         txTypeRow.click();
         valueOfTxType.click();
         valueOfTxType.clear();

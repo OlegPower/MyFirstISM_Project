@@ -7,11 +7,10 @@ import static org.testng.Assert.assertTrue;
 
 public class PowerGridTransformerDataVerifyTextTest extends BaseTest {
     @Test
-    public void test() {
+    public void test() throws InterruptedException {
         new SettingsPanelHelper().openSettingsPanel();
         new ParametersOpenHelper().openParametersPage();
-//        new PowerGridOfParametersExpandListHelper().powerGridExpandListIfNeeded();
-        new PowerGridTransformerDataVerifyTextHelper().transformerDataOpenPage();
+        new ParameterListHelper().selectParameter("Power grid", "Transformer data");
 
         String nameOfFirstRow = new PowerGridTransformerDataVerifyTextHelper().getNameOfFirstRow();
         assertTrue(nameOfFirstRow.contains("Primary transformer voltage"), "Check possibility to open the page");

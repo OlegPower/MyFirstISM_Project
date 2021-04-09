@@ -8,11 +8,11 @@ import static org.testng.Assert.assertEquals;
 public class ActivePartHotSpotChangeValueTest extends BaseTest {
 
     @Test
-    public void test(){
+    public void test() throws InterruptedException {
         new SettingsPanelHelper().openSettingsPanel();
         new ParametersOpenHelper().openParametersPage();
-        new ActivePartOfParametersExpandListHelper().activePartExpandList();
-        new ActivePartHotSpotOpenPageHelper().hotSpotOpenPage();
+        new ParameterListHelper().selectParameter("Active part", "Hot-spot");
+        new ActivePartHotSpotOpenPageHelper().hotSpotDeterminationPage();
         ActivePartHotSpotChangeValueHelper hotSpotChangeValueHelper = new ActivePartHotSpotChangeValueHelper();
         String newTypeOfMetrics = hotSpotChangeValueHelper.hotSpotChangeValue();
 

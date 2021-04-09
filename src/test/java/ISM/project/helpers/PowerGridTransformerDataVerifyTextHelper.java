@@ -6,10 +6,6 @@ import org.openqa.selenium.WebElement;
 
 public class PowerGridTransformerDataVerifyTextHelper extends PowerGridTransformerDataVerifyTextPage {
 
-    public void transformerDataOpenPage() {
-        transformerDataButton.click();
-    }
-
     public String getNameOfFirstRow() {
         WebElement nameOfFirstRow = driver.findElement(By.cssSelector("#VTPrimary"));
         return nameOfFirstRow.getText();

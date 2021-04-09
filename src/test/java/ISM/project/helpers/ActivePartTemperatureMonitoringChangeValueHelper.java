@@ -3,7 +3,6 @@ package ISM.project.helpers;
 import ISM.project.pages.ActivePartTemperatureMonitoringChangeValuePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
 public class ActivePartTemperatureMonitoringChangeValueHelper extends ActivePartTemperatureMonitoringChangeValuePage {
 
@@ -11,11 +10,6 @@ public class ActivePartTemperatureMonitoringChangeValueHelper extends ActivePart
     public static final String ONE_HUNDRED_TWENTY_EIGHT = "128";
 
     public String temperatureMonitoringChangeValue(){
-        new Actions(driver)
-                .moveToElement(temperatureMonitoringButton)
-                .build()
-                .perform();
-        temperatureMonitoringButton.click();
         topOilCellPage.click();
         WebElement getCurrentValue = driver.findElement(By.cssSelector(".rz-pointer-min"));
         String cssClasses = getCurrentValue.getAttribute("aria-valuenow");

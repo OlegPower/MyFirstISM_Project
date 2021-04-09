@@ -9,11 +9,11 @@ import static org.hamcrest.CoreMatchers.containsString;
 
 public class MotorDriveCheckValidConditionTest extends BaseTest {
     @Test
-    public void test() {
+    public void test() throws InterruptedException {
         new SettingsPanelHelper().openSettingsPanel();
         new ParametersOpenHelper().openParametersPage();
-        new PowerGridOfParametersExpandListHelper().powerGridExpandListIfNeeded();
-        new PowerGridPowerFlowMonitoringChangeValueHelper().powerFlowMonitoringOpen();
+        new ParameterListHelper().selectParameter("Power grid", "Power flow monitoring");
+        new PowerGridPowerFlowMonitoringChangeValueHelper().powerFlowRow();
         new PowerGridPowerFlowMonitoringChangeValueHelper().selectSpecificPowerFlow("Target tap position");
         new SettingsPanelHelper().openSettingsPanel();
         new MotorDriveOpenHelper().motorDriveMonitoringOpenPage();

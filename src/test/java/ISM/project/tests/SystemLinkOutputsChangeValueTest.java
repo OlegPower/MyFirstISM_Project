@@ -6,16 +6,17 @@ import static org.testng.Assert.assertTrue;
 
 public class SystemLinkOutputsChangeValueTest extends BaseTest{
     @Test
-    public void test(){
+    public void test() throws InterruptedException {
         new SettingsPanelHelper().openSettingsPanel();
         new ParametersOpenHelper().openParametersPage();
-        new SystemOfParametersExpandListHelper().expandSystemList();
-        new SystemLinkOutputsOpenPageHelper().openPage();
-        SystemLinkOutputsChangeValueHelper systemLinkOutputsChangeValueHelper2 = new SystemLinkOutputsChangeValueHelper();
-        systemLinkOutputsChangeValueHelper2.changeValue();
+        new ParameterListHelper().selectParameter("System", "Link outputs");
+        SystemLinkOutputsChangeValueHelper systemLinkOutputsChangeValueHelper = new SystemLinkOutputsChangeValueHelper();
+        systemLinkOutputsChangeValueHelper.genericDigitalOutputOpen();
+        systemLinkOutputsChangeValueHelper.changeValue();
         new ParametersReturnToListHelper().parametersInBreadCrumbs();
+
         SystemLinkOutputsCheckTextHelper systemLinkOutputsCheckTextHelper = new SystemLinkOutputsCheckTextHelper();
-        systemLinkOutputsCheckTextHelper.openLinkOutputsPage();
+        new ParameterListHelper().selectParameter("System", "Link outputs");
 
         String nameOfText = systemLinkOutputsCheckTextHelper.getNameOfText();
         assertTrue(nameOfText.contains("Generic digital output 1"), "Current text on the page:  Generic digital output 1 ");

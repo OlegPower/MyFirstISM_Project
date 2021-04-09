@@ -7,9 +7,12 @@ import org.testng.annotations.Test;
 
 public class MotorDriveSseElementTest extends BaseTest{
     @Test
-    public void test(){
+    public void test() throws InterruptedException {
         new SettingsPanelHelper().openSettingsPanel();
         new ParametersOpenHelper().openParametersPage();
-        new ParameterListHelper().selectParameter("System", "General");
+        new ParameterListHelper().selectParameter("Power grid", "Power flow monitoring");
+        new SettingsPanelHelper().openSettingsPanel();
+        new ParametersOpenHelper().openParametersPage();
+        new ParameterListHelper().selectParameter("Active part", "Buchholz relay");
     }
 }
